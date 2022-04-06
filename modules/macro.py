@@ -1,0 +1,9 @@
+macro={
+       "ENCRYPTED_MAP_ALPH_NUM":"data/secrets/encrypted_alph_map.json",
+       "MAP_ENCRYPT_KEY":"data/secrets/map_encrypt_key.json",
+       "config":"_maskconfig.json",
+        "output":"masked_data_",
+        "log":"output/record_file.json",
+        "mapping_history":"history/mapping_history_",
+        "credentials":"creds.json"
+       }

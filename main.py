@@ -1,12 +1,13 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap5
+import pandas as pd
 
 app = Flask(__name__)
 bootstrap = Bootstrap5(app)
 
 @app.route('/')
 @app.route('/home')
-def hello_world():
+def home():
    return render_template('home.html')
 
 @app.route('/maskingDataGen')
@@ -15,7 +16,8 @@ def masking_data_gen():
 
 @app.route('/maskingRulesGen')
 def masking_rules_gen():
-   return render_template("masking_rules_config_generator/rules_gen.html")
+   df = pd.read_csv("maskdata.csv")
+   return render_template("masking_rules_config_generator/rules_gen.html", df = df)
 
 @app.route('/columnGen')
 def masking_columns_gen():

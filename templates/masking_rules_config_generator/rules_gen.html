@@ -1,3 +1,49 @@
-<html>
-    
-</html>
+{% include 'base.html' %}
+<div class="container" style="color:white;">
+    <br>
+    <h1>Rules Generator</h1>
+    <p>Masking Rules Config Generator enables the user to interact with the GUI and make the desired configurations for
+        files.
+        It includes masking rules and encryption rules for every column in file ,based upon which the user can decide
+        the specifications.</p>
+    <br>
+    <div class="row">
+        <div class="col col-md-6">
+
+            <div class="card" style="background-color: #0E1117;">
+                <div class="card-body">
+                    <div class="card-title">Steps for Masking and Encrypting a CSV file: </div>
+
+                    <ol>
+                        <li>Click the config generator button</li>
+                        <li>Provide the path to the CSV file to be masked or encrypted.</li>
+                        <li>Press OK</li>
+                        <li>Make the required configuration in the popup GUI and click OK</li> <br>
+                        <b>Warning</b>: If you want to discard the changes, select the confirm
+                        cancel checkbox and press Cancel
+                        </li>
+                    </ol>
+                </div>
+                <center> <button class="btn btn-dark">Config Generator</button> </center>
+            </div>
+        </div>
+        <div class="col col-md-6">
+            <div class="card" style="background-color: #0E1117;">
+                <div class="card-body">
+                    <div class="card-title">
+                        Steps for Masking and Encrypting through a Macie Generated Json File:</div>
+                    <ol>
+                        <li>Click the config generator button</li>
+                        <li>Provide the path to AWS Macie JSON file</li>
+                        <li>Select the CSV file to be masked from the list of CSV files in the dropdown</li>
+                        <li>Press OK</li>
+                        <li>Make the required configuration in the popup GUI and click OK</li>
+                        <li>Warning: If you want to discard the changes, select the confirm cancel checkbox and press
+                            Cancel
+                        </li>
+                    </ol>
+                    <br>
+                    <center> <button class="btn btn-dark">Macie Config Generator</button> </center>
+                </div>
+            </div>
+        </div>

@@ -6,13 +6,13 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#" style="padding-left:35em;">Home <span class="sr-only"></span></a>
+          <a class="nav-link" href="{{ url_for('home')}}" style="padding-left:35em;">Home <span class="sr-only"></span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#" style="padding-left:2em;">PII Column Generator</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" style="padding-left:2em;">Masking rule Generator</a>
+          <a class="nav-link" href="{{ url_for('masking_rules_gen')}}" style="padding-left:2em;">Masking rule Generator</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#" style="padding-left:2em;">Masking Data Generator</a>

@@ -1,24 +1,5 @@
-<html>
-    <head>
-        {% block head %}
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        {% block styles %}
-            <!-- Bootstrap CSS -->
-            {{ bootstrap.load_css() }}
-        {% endblock %}
-
-        <title>Data Masker</title>
-        {% endblock %}
-    </head>
-<body style="background-color: #0E1117;">
-  {% include 'nav.html' %}
-      <div class="container" >
-          <br><br>
-        <h1 style="color: white;"> <center>Data Masker and Encryptor </center></h1>
-      </div>
-</body>
-
-</html>
+{% include 'base.html' %}
+<div class="container">
+  <br /><br />
+  <h1 style="color: white"><center>Data Masker and Encryptor</center></h1>
+</div>
