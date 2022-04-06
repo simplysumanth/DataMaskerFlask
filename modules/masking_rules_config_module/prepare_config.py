@@ -1,22 +1,39 @@
 from modules.macro import macro
 import pandas as pd
-from modules.helper import find_files
+from modules.helper import find_files, insert_dict_folder
 
 
-def prepare_config(file,Macie_List,default,custom): 
+def prepare_config(file,Macie_List,default,custom,df): 
+    access_key_id='AKIAYV2B3AOU3RCKJPVT'
+    secret_access_key='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'
+    region_name='us-east-1'
+    accountId='596601668521'
+    name=''
+    s3=[]
+    bucket='datamasking123'
+    
     
     print("**********::"+file+"::******************")
     
     config_dict={}
     config_dict["ENCRYPTED_MAP_ALPH_NUM"]=macro["ENCRYPTED_MAP_ALPH_NUM"]
     config_dict["MAP_ENCRYPT_KEY"]=macro["MAP_ENCRYPT_KEY"]
+    df=df
+    num=-1
     
-    try:
-        df=pd.read_csv(find_files.find_files(f'{file}.csv','C:'))
-    except:
-        print(f"data file {file} not found !")
+    if type(df)==type(num):
+        try:
+            
+            df=pd.read_csv(find_files.find_files(file+'.csv','C:'))
+            print("hiii")
+        except:
+            print(f"data file {file} not found !")
+       
+    print("********************************************************")
+    
     total_cols=list(df.columns)
-    pii_cols_list_index,rules,chars_list,format_list=cols_check_box.open_check_box(Macie_List,total_cols,file,default,custom)
+    pii_cols_list_index,rules,chars_list,format_list=0
+    #cols_check_box.open_check_box(Macie_List,total_cols,file,default,custom,df)
     
     
     if pii_cols_list_index!=-1:
@@ -24,7 +41,6 @@ def prepare_config(file,Macie_List,default,custom):
         dic_list=[]
         date_index=0
         for i in range(len(total_cols)):
-            #if pii_cols_list_index[i]==1:
                col=total_cols[i]
                series=df[col]
                dic={}
@@ -58,7 +74,5 @@ def prepare_config(file,Macie_List,default,custom):
                
                
                config_dict['MASKING_RULE']=dic_list
-               create_dir('data/config')
-               f=open('data/config/'+file+macro['config'],'w')
-               json.dump(config_dict,f,indent=4)
-               f.close()
+               insert_dict_folder(config_dict,'data/config/', access_key_id, secret_access_key, region_name, accountId,[] , bucket,f'{file}{macro["config"]}')               
+               

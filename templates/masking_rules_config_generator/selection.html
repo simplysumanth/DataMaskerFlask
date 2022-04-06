@@ -8,9 +8,9 @@
         the specifications.</p>
     <br>
     <div class="row">
-        <div class="col col-md-6">
-
+        <div class="col col-md-4">
             <div class="card" style="background-color: #0E1117;">
+                <br>
                 <div class="card-body">
                     <div class="card-title">Steps for Masking and Encrypting a CSV file: </div>
 
@@ -24,11 +24,12 @@
                         </li>
                     </ol>
                 </div>
-                <center> <button class="btn btn-dark">Config Generator</button> </center>
+                <center> <a href = "{{ url_for('rules_gen_configGenerator')}}" class="btn btn-dark" role = "button">Config Generator</a> </center><br><br>
             </div>
         </div>
-        <div class="col col-md-6">
+        <div class="col col-md-4">
             <div class="card" style="background-color: #0E1117;">
+                <br>
                 <div class="card-body">
                     <div class="card-title">
                         Steps for Masking and Encrypting through a Macie Generated Json File:</div>
@@ -43,7 +44,28 @@
                         </li>
                     </ol>
                     <br>
-                    <center> <button class="btn btn-dark">Macie Config Generator</button> </center>
+                    <center> <a href = "#" class="btn btn-dark" role = "button">Macie Config Generator</a> </center><br>
                 </div>
             </div>
         </div>
+        <div class="col col-md-4">
+            <div class="card" style="background-color: #0E1117;">
+                <br>
+                <div class="card-body">
+                    <div class="card-title">
+                        Steps for Masking and Encrypting directly from AWS S3 Bucket:</div>
+                    <ol>
+                        <li>Click s3 to generate config button</li>
+                        <li>Provide your AWS Credentials</li>
+                        <li>Select a s3 Bucket from the list of S3 Buckets available in the dropdown</li>
+                        <li>Select the CSV file to be masked from the list of CSV files in the dropdown</li>
+                         <li>Press OK</li>
+                          <li>Make the required configuration in the popup GUI and click OK</li>
+                           <li>Warning: If you want to discard the changes, select the confirm cancel checkbox and press Cancel</li>  
+                    </ol>
+                    <br>
+                    <center> <a href = "#" class="btn btn-dark" role = "button">Config Generator from S3</a> </center>                </div>
+            </div>
+        </div>
+    </div>
+</div>
