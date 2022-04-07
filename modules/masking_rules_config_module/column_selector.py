@@ -1,5 +1,6 @@
 import pandas as pd
-from modules.helper import isdate
+from modules.helper import isdate, insert_dict_folder, access_key_id, secret_access_key, region_name, accountId, bucket, get_buckets
+from modules.macro import macro
 
 def read_data_file(path):
     df = pd.read_csv(path)
@@ -37,6 +38,10 @@ def read_data_file(path):
        
         column_details_list.append(column_details)
        
-    return column_details_list
+    return column_details_list, cols_list
 
+def store_config_json(full_masking_req, file):
+    insert_dict_folder(full_masking_req,'data/config/', access_key_id, secret_access_key, region_name, accountId,[] , bucket,f'{file}{macro["config"]}')
 
+def read_data_from_s3(access_key_id, secret_access_key, region_name, account_id):
+    buckets = get_buckets(access_key_id, secret_access_key, region_name, account_id, "", "" ,"")
