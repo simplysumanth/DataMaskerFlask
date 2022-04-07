@@ -1,8 +1,8 @@
 import pandas as pd
 from modules.helper import isdate
 
-def read_file():
-    df = pd.read_csv("maskdata.csv")
+def read_data_file(path):
+    df = pd.read_csv(path)
     column_details_list = []
     cols_list=list(df.columns)
     for col in cols_list:
@@ -34,9 +34,9 @@ def read_file():
         else:
             masking_rules = ["none","encrypt",'translate']
             column_details['masking_rules'] = masking_rules
-        print(column_details['masking_rules'])
+       
         column_details_list.append(column_details)
-        
+       
     return column_details_list
 
 

@@ -1,9 +1,10 @@
 {% include 'base.html' %}
 <div class="container" style="color: white">
     <br /><br />
-    <form method="post">
+
+    <form method="post" action="#">
         <center>
-        <table class="table table-dark table-fit" style="width: 55em;">
+        <table class="table table-dark table-fit" style="width: 60em;">
             <thead>
                 <tr>
                     <th scope="col">Select</th>
@@ -13,16 +14,16 @@
                 </tr>
             </thead>
             <tbody>
-                {% for col in cols %}
+                {% for idx, col in enumerate(cols) %}
                 <tr>
                     <th scope="row" style="width: 5%">
-                        <input type="checkbox" name="{{col['column_name']}}" value="{{col['column_name']}}" style="width: 15px; height: 15px; margin-top: 6px; margin-left: 10px;"/>
+                        <input type="checkbox" name="check_{{idx}}" value="{{col['column_name']}}" style="width: 15px; height: 15px; margin-top: 6px; margin-left: 10px;"/>
                     </th>
                     <td style="width: 10%"><h5>{{col["column_name"]}}</h5></td>
                     <td style="width: 16.66%">
-                        <select name="masking_rules" class="btn btn-sm btn-light" method="GET" action="/">
+                        <select name="masking_rules_{{idx}}" class="btn btn-sm btn-light" method="GET" action="/">
                             {% for rule in col["masking_rules"] %}
-                                <option value="{{rule}}" SELECTED>{{rule}}</option>"
+                                <option value="{{rule}}" >{{rule}}</option>"
                             {% endfor %}
                         </select>
                     </td >
@@ -31,15 +32,14 @@
                         {% if "attributes" in col.keys()%}
                         {% if col["attributes"] == 'date' %}
                         <div class="input-group input-group-sm mb-3">
-                            
                              
-                            <input type="text" placeholder="Input Format" aria-label="Input Format" class="form-control">
+                            <input type="text" name = "input_format_{{idx}}" placeholder="Input Format" aria-label="Input Format" class="form-control">
                             
-                            <input type="text" placeholder="Output Format" aria-label="Output Format" class="form-control" style="margin-right: 5em;">
+                            <input type="text" name = "output_format_{{idx}}" placeholder="Output Format" aria-label="Output Format" class="form-control" style="margin-right: 5em;">
                           
                         </div>
                         {% else %}
-                        <select name="attributes" class="btn btn-sm btn-light" method="GET" action="/">
+                        <select name="attribute_{{idx}}" class="btn btn-sm btn-light" method="GET" action="/">
                             {% for attribute in col["attributes"] %}
                                 <option value="{{attribute}}" SELECTED>{{attribute}}</option>"
                             {% endfor %}
@@ -53,11 +53,13 @@
             </tbody>
         </table>
     </center>
-    </form>
+
     <br />
     <center>
-        <a class="btn btn-success" type="button" href="#" style="margin-right: 2em">Generate</a>
-        <a class="btn btn-danger" type="button" href="#" style="margin-left: 2em">Cancel</a>
+        <input class="btn btn-success" type="submit" href="#" style="margin-right: 2em" name = "generate_button", value = "generate">
+        <input class="btn btn-danger" type="submit" href="#" style="margin-left: 2em" name="cancel_button" value="cancel">
     </center>
+    </form>
+
 
 </div>

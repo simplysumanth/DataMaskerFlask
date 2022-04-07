@@ -1,0 +1,13 @@
+{% include 'base.html' %}
+<div class="container" style="color: white">
+    <br /><br />
+    <form method="POST" action="#" >
+        <h1>Config Generator</h1><br>
+        <label for="csvFileDetails">Choose the CSV file to generate Config: </label><br><br>
+        <input type="file" id="csvFileDetails" name="csvFileDetails" accept=".csv"><br><br>
+        <label for="configdetails">The config file exists, do you want to override? </label><br>
+        <input type="radio" id="configdetails" name="configdetails" value="yes"> Yes
+        <input type="radio" id="configdetails" name="configdetails" value="no"> No<br><br>
+        <input type="submit" class="btn btn-dark"></button>
+    </form>
+</div>
