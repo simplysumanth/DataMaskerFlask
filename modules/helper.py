@@ -68,7 +68,6 @@ def find_files(filename, search_path):
    return ""
 
 
-
 def get_buckets(access_key_id,secret_access_key,region_name,accountId,s3,bucket,file):
     client=boto3.client('s3',aws_access_key_id=access_key_id,aws_secret_access_key=secret_access_key,region_name=region_name)
     response = client.list_buckets()
@@ -83,6 +82,15 @@ def contents_in_s3(access_key_id, secret_access_key, region_name, accountId, s3,
     your_bucket = s3.Bucket(bucket)
     contents=[]
     for s3_file in your_bucket.objects.all():
+        contents.append(s3_file.key)
+    return contents
+
+def contents_in_path(path,access_key_id, secret_access_key, region_name, accountId, s3,bucket,file):
+    session = Session(aws_access_key_id=access_key_id,aws_secret_access_key=secret_access_key)
+    s3 = session.resource('s3')
+    your_bucket = s3.Bucket(bucket)
+    contents=[]
+    for s3_file in your_bucket.objects.filter(Prefix=path):
         contents.append(s3_file.key)
     return contents
 

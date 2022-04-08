@@ -1,9 +1,19 @@
 import pandas as pd
-from modules.helper import isdate, insert_dict_folder, access_key_id, secret_access_key, region_name, accountId, bucket, get_buckets
+from modules.helper import isdate, insert_dict_folder, access_key_id, secret_access_key, region_name, accountId, bucket, get_buckets, find_files
 from modules.macro import macro
 
-def read_data_file(path):
-    df = pd.read_csv(path)
+def read_data_file(macie_list,cols_list,file,default,custom,df):
+    file = file.split('/')[-1][0:-4]
+    try:
+        if isinstance(df, int):
+            print("in path")
+            try:
+                df=pd.read_csv(find_files(f'{file}.csv','C:/Users/'))
+            except:
+                print(f"data file {file} not found !")
+    except:
+        pass
+
     column_details_list = []
     cols_list=list(df.columns)
     for col in cols_list:

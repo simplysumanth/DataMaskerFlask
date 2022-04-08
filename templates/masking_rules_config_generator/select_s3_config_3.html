@@ -4,10 +4,10 @@
 
     <form method="POST" class="form-1" action="#">
         <h1>Configure S3 details:</h1><br>
-        <label for="access_key_id_label">Please select the S3 Bucket: </label><br><br>
-        <select name="bucket_select" class="btn btn-sm btn-light" method="GET" action="/">
-            {% for bucket in buckets %}
-                <option value="{{bucket}}">{{bucket}}</option>"
+        <label for="access_key_id_label">Please select the file: </label><br><br>
+        <select name="file_select" class="btn btn-sm btn-light" method="GET" action="/">
+            {% for file in files %}
+                <option value="{{file}}">{{file}}</option>"
             {% endfor %}
         </select>
         <input type="submit" class="btn btn-dark"></button>
