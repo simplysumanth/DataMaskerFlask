@@ -1,0 +1,30 @@
+{% include 'base.html' %}
+<div class="container" style="color: white">
+    <form method="POST" action="{{ url_for('pii_macie_identifier')}}" >
+        <h1> PII Config Generator</h1>
+        <label for="access_key_id">Enter the access key id:</label><br>
+        <input type="text" name="access_key_id"
+               placeholder="Access Keyid">
+        </input><br><br>
+        <label for="secret_access_key">Enter the secret access key:</label><br>
+        <input type="text" name="secret_access_key"
+               placeholder="Secret Access Key">
+        </input><br><br>
+        <label for="region_name">Enter the region name:</label><br>
+        <input type="text" name="region_name"
+               placeholder="Region Name">
+        </input><br><br>
+        <label for="accountId">Enter the Accountid:</label><br>
+        <input type="text" name="accountId"
+               placeholder="Account Id">
+       </input><br><br>
+        <label for="jobName">Enter the name of the job to be created:</label><br>
+        <input type="text" name="jobName"
+               placeholder="Jobname to be created">
+        </input><br><br>
+        <label for="s3BucketName">Enter the s3 Bucket name:</label><br>
+        <input type="text" name="s3BucketName"
+               placeholder="s3 Bucket name">
+        </input><br><br>
+        <input type="submit" class="btn btn-dark"></input>
+    </form>

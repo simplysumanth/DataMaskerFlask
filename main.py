@@ -6,6 +6,7 @@ from flask_bootstrap import Bootstrap5
 from modules.masking_rules_config_module.column_selector import read_data_file, store_config_json
 from modules.helper import contents_in_s3, get_buckets, get_df
 from modules.macro import macro
+from modules.pii_col_gen_module.macie_pii_identifier import main
 import ast
 import pandas as pd
 
@@ -16,6 +17,16 @@ bootstrap = Bootstrap5(app)
 @app.route('/home',methods=['POST', 'GET'])
 def home():
    return render_template('home.html')
+
+@app.route('/piicolumnGen')
+def pii_column_gen():
+   return render_template("pii_column_generator/columns_gen.html")
+
+
+@app.route('/piicolumnGen/maciepiiIdentifier', methods=["GET","POST"])
+def pii_macie_identifier():
+   if request.method == "POST":
+      return main(request.form['access_key_id'], request.form['secret_access_key'], request.form['region_name'], request.form['accountId'], request.form['jobName'], request.form['s3BucketName'])
 
 
 @app.route('/maskingDataGen')
