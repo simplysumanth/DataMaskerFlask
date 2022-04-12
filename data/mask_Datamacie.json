@@ -1,0 +1,658 @@
+[
+  {
+    "accountId": "596601668521",
+    "archived": false,
+    "category": "CLASSIFICATION",
+    "classificationDetails": {
+      "detailedResultsLocation": "s3://[export-config-not-set]/AWSLogs/596601668521/Macie/ap-south-1/a8b459ac895640ffdf59d22577b5a4a2/596601668521/c4d75491-5f8d-3f52-8680-58f0469339d8.jsonl.gz",
+      "jobArn": "arn:aws:macie2:ap-south-1:596601668521:classification-job/a8b459ac895640ffdf59d22577b5a4a2",
+      "jobId": "a8b459ac895640ffdf59d22577b5a4a2",
+      "result": {
+        "additionalOccurrences": true,
+        "customDataIdentifiers": {
+          "detections": [
+            {
+              "arn": "61bb2385-5b5a-475e-ab1a-1eb23bae84d4",
+              "count": 10,
+              "name": "empid",
+              "occurrences": {
+                "cells": [
+                  {
+                    "cellReference": null,
+                    "column": 1,
+                    "columnName": "empid",
+                    "row": 2
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 1,
+                    "columnName": "empid",
+                    "row": 3
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 1,
+                    "columnName": "empid",
+                    "row": 4
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 1,
+                    "columnName": "empid",
+                    "row": 5
+                  }
+                ]
+              }
+            },
+            {
+              "arn": "d59b5c7a-3d48-4a99-97de-fdb20298da97",
+              "count": 9,
+              "name": "email_new",
+              "occurrences": {
+                "cells": [
+                  {
+                    "cellReference": null,
+                    "column": 3,
+                    "columnName": "email",
+                    "row": 2
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 3,
+                    "columnName": "email",
+                    "row": 3
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 3,
+                    "columnName": "email",
+                    "row": 4
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 3,
+                    "columnName": "email",
+                    "row": 5
+                  }
+                ]
+              }
+            }
+          ],
+          "totalCount": 19
+        },
+        "mimeType": "text/csv",
+        "sensitiveData": [
+          {
+            "category": "PERSONAL_INFORMATION",
+            "detections": [
+              {
+                "count": 2,
+                "occurrences": {
+                  "cells": [
+                    {
+                      "cellReference": null,
+                      "column": 2,
+                      "columnName": "name",
+                      "row": 3
+                    },
+                    {
+                      "cellReference": null,
+                      "column": 2,
+                      "columnName": "name",
+                      "row": 7
+                    }
+                  ]
+                },
+                "type": "NAME"
+              },
+              {
+                "count": 9,
+                "occurrences": {
+                  "cells": [
+                    {
+                      "cellReference": null,
+                      "column": 5,
+                      "columnName": "dob",
+                      "row": 2
+                    },
+                    {
+                      "cellReference": null,
+                      "column": 5,
+                      "columnName": "dob",
+                      "row": 3
+                    },
+                    {
+                      "cellReference": null,
+                      "column": 5,
+                      "columnName": "dob",
+                      "row": 4
+                    },
+                    {
+                      "cellReference": null,
+                      "column": 5,
+                      "columnName": "dob",
+                      "row": 5
+                    },
+                    {
+                      "cellReference": null,
+                      "column": 5,
+                      "columnName": "dob",
+                      "row": 6
+                    }
+                  ]
+                },
+                "type": "DATE_OF_BIRTH"
+              }
+            ],
+            "totalCount": 11
+          }
+        ],
+        "sizeClassified": 594,
+        "status": {
+          "code": "COMPLETE",
+          "reason": null
+        }
+      }
+    },
+    "count": 1,
+    "createdAt": "2022-03-18T04:45:54.786Z",
+    "description": "The object contains more than one type of sensitive information.",
+    "id": "79f29ee1a4a27e5bc7fc30dee011b9e3",
+    "partition": "aws",
+    "region": "ap-south-1",
+    "resourcesAffected": {
+      "s3Bucket": {
+        "allowsUnencryptedObjectUploads": "TRUE",
+        "arn": "arn:aws:s3:::maciewith2files",
+        "createdAt": "2022-03-18T04:38:13.000Z",
+        "defaultServerSideEncryption": {
+          "encryptionType": "NONE",
+          "kmsMasterKeyId": null
+        },
+        "name": "maciewith2files",
+        "owner": {
+          "displayName": "null",
+          "id": "004234c47c1e6c7cf4b165e8e876c9b6d0d535dc73d9a714672faece0944e20a"
+        },
+        "publicAccess": {
+          "effectivePermission": "NOT_PUBLIC",
+          "permissionConfiguration": {
+            "accountLevelPermissions": {
+              "blockPublicAccess": {
+                "blockPublicAcls": false,
+                "blockPublicPolicy": false,
+                "ignorePublicAcls": false,
+                "restrictPublicBuckets": false
+              }
+            },
+            "bucketLevelPermissions": {
+              "accessControlList": {
+                "allowsPublicReadAccess": false,
+                "allowsPublicWriteAccess": false
+              },
+              "blockPublicAccess": {
+                "blockPublicAcls": true,
+                "blockPublicPolicy": true,
+                "ignorePublicAcls": true,
+                "restrictPublicBuckets": true
+              },
+              "bucketPolicy": {
+                "allowsPublicReadAccess": false,
+                "allowsPublicWriteAccess": false
+              }
+            }
+          }
+        },
+        "tags": []
+      },
+      "s3Object": {
+        "bucketArn": "arn:aws:s3:::maciewith2files",
+        "eTag": "a343d6e73230a2200b6e15fed88a5c90",
+        "extension": "csv",
+        "key": "maskdata.csv",
+        "lastModified": "2022-03-18T04:39:01.000Z",
+        "path": "maciewith2files/maskdata.csv",
+        "publicAccess": false,
+        "serverSideEncryption": {
+          "encryptionType": "NONE",
+          "kmsMasterKeyId": null
+        },
+        "size": 594,
+        "storageClass": "STANDARD",
+        "tags": [],
+        "versionId": ""
+      }
+    },
+    "sample": false,
+    "schemaVersion": "1.0",
+    "severity": {
+      "description": "Medium",
+      "score": 2
+    },
+    "title": "The S3 object contains multiple types of sensitive information.",
+    "type": "SensitiveData:S3Object/Multiple",
+    "updatedAt": "2022-03-18T04:45:54.786Z"
+  },
+  {
+    "accountId": "596601668521",
+    "archived": false,
+    "category": "CLASSIFICATION",
+    "classificationDetails": {
+      "detailedResultsLocation": "s3://[export-config-not-set]/AWSLogs/596601668521/Macie/ap-south-1/a8b459ac895640ffdf59d22577b5a4a2/596601668521/c4d75491-5f8d-3f52-8680-58f0469339d8.jsonl.gz",
+      "jobArn": "arn:aws:macie2:ap-south-1:596601668521:classification-job/a8b459ac895640ffdf59d22577b5a4a2",
+      "jobId": "a8b459ac895640ffdf59d22577b5a4a2",
+      "result": {
+        "additionalOccurrences": true,
+        "customDataIdentifiers": {
+          "detections": [
+            {
+              "arn": "61bb2385-5b5a-475e-ab1a-1eb23bae84d4",
+              "count": 6,
+              "name": "empid",
+              "occurrences": {
+                "cells": [
+                  {
+                    "cellReference": null,
+                    "column": 5,
+                    "columnName": "Salary",
+                    "row": 2
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 5,
+                    "columnName": "Salary",
+                    "row": 12
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 5,
+                    "columnName": "Salary",
+                    "row": 14
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 5,
+                    "columnName": "Salary",
+                    "row": 16
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 5,
+                    "columnName": "Salary",
+                    "row": 17
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 5,
+                    "columnName": "Salary",
+                    "row": 21
+                  }
+                ]
+              }
+            },
+            {
+              "arn": "d59b5c7a-3d48-4a99-97de-fdb20298da97",
+              "count": 19,
+              "name": "email_new",
+              "occurrences": {
+                "cells": [
+                  {
+                    "cellReference": null,
+                    "column": 7,
+                    "columnName": "email",
+                    "row": 2
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 7,
+                    "columnName": "email",
+                    "row": 3
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 7,
+                    "columnName": "email",
+                    "row": 4
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 7,
+                    "columnName": "email",
+                    "row": 5
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 7,
+                    "columnName": "email",
+                    "row": 6
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 7,
+                    "columnName": "email",
+                    "row": 7
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 7,
+                    "columnName": "email",
+                    "row": 8
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 7,
+                    "columnName": "email",
+                    "row": 9
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 7,
+                    "columnName": "email",
+                    "row": 10
+                  }
+                ]
+              }
+            }
+          ],
+          "totalCount": 25
+        },
+        "mimeType": "text/csv",
+        "sensitiveData": [],
+        "sizeClassified": 1164,
+        "status": {
+          "code": "COMPLETE",
+          "reason": null
+        }
+      }
+    },
+    "count": 1,
+    "createdAt": "2022-03-18T04:45:54.786Z",
+    "description": "This object contains content that matches one or more custom data identifiers for the organization. The content might include multiple types of sensitive information.",
+    "id": "a06caa18355c97d2592562b362ace6d4",
+    "partition": "aws",
+    "region": "ap-south-1",
+    "resourcesAffected": {
+      "s3Bucket": {
+        "allowsUnencryptedObjectUploads": "TRUE",
+        "arn": "arn:aws:s3:::maciewith2files",
+        "createdAt": "2022-03-18T04:38:13.000Z",
+        "defaultServerSideEncryption": {
+          "encryptionType": "NONE",
+          "kmsMasterKeyId": null
+        },
+        "name": "maciewith2files",
+        "owner": {
+          "displayName": "null",
+          "id": "004234c47c1e6c7cf4b165e8e876c9b6d0d535dc73d9a714672faece0944e20a"
+        },
+        "publicAccess": {
+          "effectivePermission": "NOT_PUBLIC",
+          "permissionConfiguration": {
+            "accountLevelPermissions": {
+              "blockPublicAccess": {
+                "blockPublicAcls": false,
+                "blockPublicPolicy": false,
+                "ignorePublicAcls": false,
+                "restrictPublicBuckets": false
+              }
+            },
+            "bucketLevelPermissions": {
+              "accessControlList": {
+                "allowsPublicReadAccess": false,
+                "allowsPublicWriteAccess": false
+              },
+              "blockPublicAccess": {
+                "blockPublicAcls": true,
+                "blockPublicPolicy": true,
+                "ignorePublicAcls": true,
+                "restrictPublicBuckets": true
+              },
+              "bucketPolicy": {
+                "allowsPublicReadAccess": false,
+                "allowsPublicWriteAccess": false
+              }
+            }
+          }
+        },
+        "tags": []
+      },
+      "s3Object": {
+        "bucketArn": "arn:aws:s3:::maciewith2files",
+        "eTag": "d79c7a6182953c28e95decfd3f586691",
+        "extension": "csv",
+        "key": "employees.csv",
+        "lastModified": "2022-03-18T04:39:02.000Z",
+        "path": "maciewith2files/employees.csv",
+        "publicAccess": false,
+        "serverSideEncryption": {
+          "encryptionType": "NONE",
+          "kmsMasterKeyId": null
+        },
+        "size": 1164,
+        "storageClass": "STANDARD",
+        "tags": [],
+        "versionId": ""
+      }
+    },
+    "sample": false,
+    "schemaVersion": "1.0",
+    "severity": {
+      "description": "Medium",
+      "score": 2
+    },
+    "title": "The S3 object contains content that matches a custom data identifier.",
+    "type": "SensitiveData:S3Object/CustomIdentifier",
+    "updatedAt": "2022-03-18T04:45:54.786Z"
+  },
+  {
+    "accountId": "596601668521",
+    "archived": false,
+    "category": "CLASSIFICATION",
+    "classificationDetails": {
+      "detailedResultsLocation": "s3://[export-config-not-set]/AWSLogs/596601668521/Macie/ap-south-1/a8b459ac895640ffdf59d22577b5a4a2/596601668521/c4d75491-5f8d-3f52-8680-58f0469339d8.jsonl.gz",
+      "jobArn": "arn:aws:macie2:ap-south-1:596601668521:classification-job/a8b459ac895640ffdf59d22577b5a4a2",
+      "jobId": "a8b459ac895640ffdf59d22577b5a4a2",
+      "result": {
+        "additionalOccurrences": true,
+        "customDataIdentifiers": {
+          "detections": [
+            {
+              "arn": "61bb2385-5b5a-475e-ab1a-1eb23bae84d4",
+              "count": 6,
+              "name": "empid",
+              "occurrences": {
+                "cells": [
+                  {
+                    "cellReference": null,
+                    "column": 5,
+                    "columnName": "Salary",
+                    "row": 2
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 5,
+                    "columnName": "Salary",
+                    "row": 12
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 5,
+                    "columnName": "Salary",
+                    "row": 14
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 5,
+                    "columnName": "Salary",
+                    "row": 16
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 5,
+                    "columnName": "Salary",
+                    "row": 17
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 5,
+                    "columnName": "Salary",
+                    "row": 21
+                  }
+                ]
+              }
+            },
+            {
+              "arn": "d59b5c7a-3d48-4a99-97de-fdb20298da97",
+              "count": 19,
+              "name": "email_new",
+              "occurrences": {
+                "cells": [
+                  {
+                    "cellReference": null,
+                    "column": 7,
+                    "columnName": "email",
+                    "row": 2
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 7,
+                    "columnName": "email",
+                    "row": 3
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 7,
+                    "columnName": "email",
+                    "row": 4
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 7,
+                    "columnName": "email",
+                    "row": 5
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 7,
+                    "columnName": "email",
+                    "row": 6
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 7,
+                    "columnName": "email",
+                    "row": 7
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 7,
+                    "columnName": "email",
+                    "row": 8
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 7,
+                    "columnName": "email",
+                    "row": 9
+                  },
+                  {
+                    "cellReference": null,
+                    "column": 7,
+                    "columnName": "email",
+                    "row": 10
+                  }
+                ]
+              }
+            }
+          ],
+          "totalCount": 25
+        },
+        "mimeType": "text/csv",
+        "sensitiveData": [],
+        "sizeClassified": 1164,
+        "status": {
+          "code": "COMPLETE",
+          "reason": null
+        }
+      }
+    },
+    "count": 1,
+    "createdAt": "2022-03-18T04:45:54.786Z",
+    "description": "This object contains content that matches one or more custom data identifiers for the organization. The content might include multiple types of sensitive information.",
+    "id": "a06caa18355c97d2592562b362ace6d4",
+    "partition": "aws",
+    "region": "ap-south-1",
+    "resourcesAffected": {
+      "s3Bucket": {
+        "allowsUnencryptedObjectUploads": "TRUE",
+        "arn": "arn:aws:s3:::maciewith2files",
+        "createdAt": "2022-03-18T04:38:13.000Z",
+        "defaultServerSideEncryption": {
+          "encryptionType": "NONE",
+          "kmsMasterKeyId": null
+        },
+        "name": "maciewith2files",
+        "owner": {
+          "displayName": "null",
+          "id": "004234c47c1e6c7cf4b165e8e876c9b6d0d535dc73d9a714672faece0944e20a"
+        },
+        "publicAccess": {
+          "effectivePermission": "NOT_PUBLIC",
+          "permissionConfiguration": {
+            "accountLevelPermissions": {
+              "blockPublicAccess": {
+                "blockPublicAcls": false,
+                "blockPublicPolicy": false,
+                "ignorePublicAcls": false,
+                "restrictPublicBuckets": false
+              }
+            },
+            "bucketLevelPermissions": {
+              "accessControlList": {
+                "allowsPublicReadAccess": false,
+                "allowsPublicWriteAccess": false
+              },
+              "blockPublicAccess": {
+                "blockPublicAcls": true,
+                "blockPublicPolicy": true,
+                "ignorePublicAcls": true,
+                "restrictPublicBuckets": true
+              },
+              "bucketPolicy": {
+                "allowsPublicReadAccess": false,
+                "allowsPublicWriteAccess": false
+              }
+            }
+          }
+        },
+        "tags": []
+      },
+      "s3Object": {
+        "bucketArn": "arn:aws:s3:::maciewith2files",
+        "eTag": "d79c7a6182953c28e95decfd3f586691",
+        "extension": "csv",
+        "key": "emp.csv",
+        "lastModified": "2022-03-18T04:39:02.000Z",
+        "path": "maciewith2files/employees.csv",
+        "publicAccess": false,
+        "serverSideEncryption": {
+          "encryptionType": "NONE",
+          "kmsMasterKeyId": null
+        },
+        "size": 1164,
+        "storageClass": "STANDARD",
+        "tags": [],
+        "versionId": ""
+      }
+    },
+    "sample": false,
+    "schemaVersion": "1.0",
+    "severity": {
+      "description": "Medium",
+      "score": 2
+    },
+    "title": "The S3 object contains content that matches a custom data identifier.",
+    "type": "SensitiveData:S3Object/CustomIdentifier",
+    "updatedAt": "2022-03-18T04:45:54.786Z"
+  }
+]

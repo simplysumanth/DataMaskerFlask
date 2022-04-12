@@ -1,0 +1,142 @@
+{% include 'base.html' %}
+<div class="container" style="color: white">
+    <br /><br />
+    <center>
+    {% if override == True %}
+        <h5 class="text-danger"> The File already exists. Please Click Generate to overwrite it (or else) click cancel </h5>
+    {% endif %}<br>
+</center>
+    <form method="post" action="#">
+        <center>
+        <table class="table table-dark table-fit" style="width: 60em;">
+            <thead>
+                <tr>
+                    <th scope="col">Select</th>
+                    <th scope="col">Column Name</th>
+                    <th scope="col">Masking Rules</th>
+                    <th scope="col">Attribute</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for idx, col in enumerate(cols) %}
+                    {% if col["column_name"] in default %}
+                <tr>
+                    <th scope="row" style="width: 5%">
+                        <input type="checkbox" name="check_{{idx}}" value="{{col['column_name']}}" style="width: 15px; height: 15px; margin-top: 6px; margin-left: 10px;" checked/>
+                    </th>
+                    <td style="width: 10%"><h5>{{col["column_name"]}}  (Macie-Default Identifier)</h5></td>
+                    <td style="width: 16.66%">
+                        <select name="masking_rules_{{idx}}" class="btn btn-sm btn-light" method="GET" action="/">
+                            {% for rule in col["masking_rules"] %}
+                                <option value="{{rule}}" >{{rule}}</option>"
+                            {% endfor %}
+                        </select>
+                    </td >
+                    
+                    <td style="width: 16.66%">
+                        {% if "attributes" in col.keys()%}
+                        {% if col["attributes"] == 'date' %}
+                        <div class="input-group input-group-sm mb-3">
+                             
+                            <input type="text" name = "input_format_{{idx}}" placeholder="Input Format" aria-label="Input Format" class="form-control">
+                            
+                            <input type="text" name = "output_format_{{idx}}" placeholder="Output Format" aria-label="Output Format" class="form-control" style="margin-right: 5em;">
+                          
+                        </div>
+                        {% else %}
+                        <select name="attribute_{{idx}}" class="btn btn-sm btn-light" method="GET" action="/">
+                            {% for attribute in col["attributes"] %}
+                                <option value="{{attribute}}" SELECTED>{{attribute}}</option>"
+                            {% endfor %}
+                        </select>
+                        {% endif %}
+                        {% endif %}
+                    </td>
+                    
+                </tr>
+
+                {% elif col["column_name"] in custom %}
+                <tr>
+                    <th scope="row" style="width: 5%">
+                        <input type="checkbox" name="check_{{idx}}" value="{{col['column_name']}}" style="width: 15px; height: 15px; margin-top: 6px; margin-left: 10px;" checked/>
+                    </th>
+                    <td style="width: 10%"><h5>{{col["column_name"]}}  (Macie-Custom Identifier)</h5></td>
+                    <td style="width: 16.66%">
+                        <select name="masking_rules_{{idx}}" class="btn btn-sm btn-light" method="GET" action="/">
+                            {% for rule in col["masking_rules"] %}
+                                <option value="{{rule}}" >{{rule}}</option>"
+                            {% endfor %}
+                        </select>
+                    </td >
+                    
+                    <td style="width: 16.66%">
+                        {% if "attributes" in col.keys()%}
+                        {% if col["attributes"] == 'date' %}
+                        <div class="input-group input-group-sm mb-3">
+                             
+                            <input type="text" name = "input_format_{{idx}}" placeholder="Input Format" aria-label="Input Format" class="form-control">
+                            
+                            <input type="text" name = "output_format_{{idx}}" placeholder="Output Format" aria-label="Output Format" class="form-control" style="margin-right: 5em;">
+                          
+                        </div>
+                        {% else %}
+                        <select name="attribute_{{idx}}" class="btn btn-sm btn-light" method="GET" action="/">
+                            {% for attribute in col["attributes"] %}
+                                <option value="{{attribute}}" SELECTED>{{attribute}}</option>"
+                            {% endfor %}
+                        </select>
+                        {% endif %}
+                        {% endif %}
+                    </td>
+                    
+                </tr>
+                {% else %}
+                <tr>
+                    <th scope="row" style="width: 5%">
+                        <input type="checkbox" name="check_{{idx}}" value="{{col['column_name']}}" style="width: 15px; height: 15px; margin-top: 6px; margin-left: 10px;"/>
+                    </th>
+                    <td style="width: 10%"><h5>{{col["column_name"]}}</h5></td>
+                    <td style="width: 16.66%">
+                        <select name="masking_rules_{{idx}}" class="btn btn-sm btn-light" method="GET" action="/">
+                            {% for rule in col["masking_rules"] %}
+                                <option value="{{rule}}" >{{rule}}</option>"
+                            {% endfor %}
+                        </select>
+                    </td >
+                    
+                    <td style="width: 16.66%">
+                        {% if "attributes" in col.keys()%}
+                        {% if col["attributes"] == 'date' %}
+                        <div class="input-group input-group-sm mb-3">
+                             
+                            <input type="text" name = "input_format_{{idx}}" placeholder="Input Format" aria-label="Input Format" class="form-control">
+                            
+                            <input type="text" name = "output_format_{{idx}}" placeholder="Output Format" aria-label="Output Format" class="form-control" style="margin-right: 5em;">
+                          
+                        </div>
+                        {% else %}
+                        <select name="attribute_{{idx}}" class="btn btn-sm btn-light" method="GET" action="/">
+                            {% for attribute in col["attributes"] %}
+                                <option value="{{attribute}}" SELECTED>{{attribute}}</option>"
+                            {% endfor %}
+                        </select>
+                        {% endif %}
+                        {% endif %}
+                    </td>
+                    
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </center>
+
+    <br />
+    <center>
+        <input class="btn btn-success" type="submit" href="#" style="margin-right: 2em" name = "button", value = "generate">
+        <input class="btn btn-danger" type="submit" href="#" style="margin-right: 2em" name = "button", value = "cancel">
+    </center>
+    </form>
+
+
+</div>

@@ -1,0 +1,193 @@
+[
+  {
+    "accountId": "596601668521",
+    "archived": false,
+    "category": "CLASSIFICATION",
+    "classificationDetails": {
+      "detailedResultsLocation": "s3://[export-config-not-set]/AWSLogs/596601668521/Macie/us-east-1/add06391b229e15bdae1f37036c54061/596601668521/3c1e28ee-da7a-33c7-8582-a023d088744b.jsonl.gz",
+      "jobArn": "arn:aws:macie2:us-east-1:596601668521:classification-job/add06391b229e15bdae1f37036c54061",
+      "jobId": "add06391b229e15bdae1f37036c54061",
+      "result": {
+        "additionalOccurrences": false,
+        "customDataIdentifiers": {
+          "detections": [],
+          "totalCount": 0
+        },
+        "mimeType": "text/csv",
+        "sensitiveData": [
+          {
+            "category": "PERSONAL_INFORMATION",
+            "detections": [
+              {
+                "count": 2,
+                "occurrences": {
+                  "cells": [
+                    {
+                      "cellReference": null,
+                      "column": 2,
+                      "columnName": "name",
+                      "row": 3
+                    },
+                    {
+                      "cellReference": null,
+                      "column": 2,
+                      "columnName": "name",
+                      "row": 7
+                    }
+                  ]
+                },
+                "type": "NAME"
+              },
+              {
+                "count": 9,
+                "occurrences": {
+                  "cells": [
+                    {
+                      "cellReference": null,
+                      "column": 5,
+                      "columnName": "dob",
+                      "row": 2
+                    },
+                    {
+                      "cellReference": null,
+                      "column": 5,
+                      "columnName": "dob",
+                      "row": 3
+                    },
+                    {
+                      "cellReference": null,
+                      "column": 5,
+                      "columnName": "dob",
+                      "row": 4
+                    },
+                    {
+                      "cellReference": null,
+                      "column": 5,
+                      "columnName": "dob",
+                      "row": 5
+                    },
+                    {
+                      "cellReference": null,
+                      "column": 5,
+                      "columnName": "dob",
+                      "row": 6
+                    },
+                    {
+                      "cellReference": null,
+                      "column": 5,
+                      "columnName": "dob",
+                      "row": 7
+                    },
+                    {
+                      "cellReference": null,
+                      "column": 5,
+                      "columnName": "dob",
+                      "row": 8
+                    },
+                    {
+                      "cellReference": null,
+                      "column": 5,
+                      "columnName": "dob",
+                      "row": 9
+                    },
+                    {
+                      "cellReference": null,
+                      "column": 5,
+                      "columnName": "dob",
+                      "row": 10
+                    }
+                  ]
+                },
+                "type": "DATE_OF_BIRTH"
+              }
+            ],
+            "totalCount": 11
+          }
+        ],
+        "sizeClassified": 594,
+        "status": {
+          "code": "COMPLETE",
+          "reason": null
+        }
+      }
+    },
+    "count": 1,
+    "createdAt": "2022-04-08T13:02:19.525Z",
+    "description": "The object contains personal information such as first or last names, addresses, or identification numbers.",
+    "id": "5f3f237780d2eb10d8d81bf81bf655be",
+    "partition": "aws",
+    "region": "us-east-1",
+    "resourcesAffected": {
+      "s3Bucket": {
+        "allowsUnencryptedObjectUploads": "TRUE",
+        "arn": "arn:aws:s3:::empv",
+        "createdAt": "2022-04-01T07:32:10.000Z",
+        "defaultServerSideEncryption": {
+          "encryptionType": "NONE",
+          "kmsMasterKeyId": null
+        },
+        "name": "empv",
+        "owner": {
+          "displayName": "sairoxx1999",
+          "id": "004234c47c1e6c7cf4b165e8e876c9b6d0d535dc73d9a714672faece0944e20a"
+        },
+        "publicAccess": {
+          "effectivePermission": "NOT_PUBLIC",
+          "permissionConfiguration": {
+            "accountLevelPermissions": {
+              "blockPublicAccess": {
+                "blockPublicAcls": false,
+                "blockPublicPolicy": false,
+                "ignorePublicAcls": false,
+                "restrictPublicBuckets": false
+              }
+            },
+            "bucketLevelPermissions": {
+              "accessControlList": {
+                "allowsPublicReadAccess": false,
+                "allowsPublicWriteAccess": false
+              },
+              "blockPublicAccess": {
+                "blockPublicAcls": false,
+                "blockPublicPolicy": false,
+                "ignorePublicAcls": false,
+                "restrictPublicBuckets": false
+              },
+              "bucketPolicy": {
+                "allowsPublicReadAccess": false,
+                "allowsPublicWriteAccess": false
+              }
+            }
+          }
+        },
+        "tags": []
+      },
+      "s3Object": {
+        "bucketArn": "arn:aws:s3:::empv",
+        "eTag": "a343d6e73230a2200b6e15fed88a5c90",
+        "extension": "csv",
+        "key": "maskdata.csv",
+        "lastModified": "2022-04-01T07:32:39.000Z",
+        "path": "empv/maskdata.csv",
+        "publicAccess": false,
+        "serverSideEncryption": {
+          "encryptionType": "NONE",
+          "kmsMasterKeyId": null
+        },
+        "size": 594,
+        "storageClass": "STANDARD",
+        "tags": [],
+        "versionId": ""
+      }
+    },
+    "sample": false,
+    "schemaVersion": "1.0",
+    "severity": {
+      "description": "Medium",
+      "score": 2
+    },
+    "title": "The S3 object contains personal information.",
+    "type": "SensitiveData:S3Object/Personal",
+    "updatedAt": "2022-04-08T13:02:19.525Z"
+  }
+]

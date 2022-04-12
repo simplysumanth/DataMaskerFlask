@@ -1,8 +1,12 @@
 {% include 'base.html' %}
 <div class="container" style="color: white">
     <br /><br />
-
-    <form method="post" action="#">
+    <center>
+    {% if override == True %}
+        <h5 class="text-danger"> The File already exists. Please Click Generate to overwrite it (or else) click cancel </h5>
+    {% endif %}<br>
+</center>
+        <form method="post" action="#">
         <center>
         <table class="table table-dark table-fit" style="width: 60em;">
             <thead>
@@ -56,8 +60,8 @@
 
     <br />
     <center>
-        <input class="btn btn-success" type="submit" href="#" style="margin-right: 2em" name = "generate_button", value = "generate">
-        <input class="btn btn-danger" type="submit" href="{{url_for('home')}}" style="margin-left: 2em" name="cancel_button" value="cancel">
+        <input class="btn btn-success" type="submit" href="#" style="margin-right: 2em" name = "button", value = "generate">
+        <input class="btn btn-danger" type="submit" href="#" style="margin-right: 2em" name = "button", value = "cancel">
     </center>
     </form>
 

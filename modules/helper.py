@@ -99,3 +99,14 @@ def get_df(access_key_id,secret_access_key,region_name,accountId,s3,bucket,file)
     response = client.get_object(Bucket=bucket, Key=file)
     df = pd.read_csv(response.get("Body"))
     return df
+
+def check_override(file,Macie_list,default,custom,df):
+    contents=contents_in_path(f'data/config/', access_key_id, secret_access_key, region_name, accountId, [],bucket,"")
+    print(contents)
+    if f'data/config/{file}{macro["config"]}' not in contents :
+        print("False")
+        return False
+        
+    else:
+        print("True")
+        return True

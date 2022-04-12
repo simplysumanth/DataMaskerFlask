@@ -1,0 +1,19 @@
+{% include 'base.html' %}
+<div class="container" style="color:white;">
+    <br><br>
+    <form method="POST" class="form-1" action="#">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <label for="access_key_id_label">Please select the file: </label><br><br>
+                <select name="macie_file_select" class="btn btn-sm btn-light" method="GET" action="/">
+                    {% for file in files %}
+                    <option value="{{file}}">{{file}}</option>"
+                    {% endfor %}
+                </select>
+            <input type="submit" class="btn btn-dark"></button>
+        </div>
+        <div class="col-md-4"></div>
+</div>
+</form>
+</div>
